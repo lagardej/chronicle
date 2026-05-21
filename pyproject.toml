@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "duckdb>=1.5.3,<2",
+    "h3>=4.4.2,<5",
+]
 
 [dependency-groups]
 dev = [
