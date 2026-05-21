@@ -21,7 +21,7 @@ ActorRegistry = dict[int, dict]
 class PositionComponent:
     """Current location of an actor as an H3 cell index (LOD 2)."""
 
-    cell_index: int
+    cell_index: str
 
 
 @dataclass
@@ -36,11 +36,11 @@ class MovementComponent:
 class PathComponent:
     """Queued waypoints for an actor's current journey."""
 
-    waypoints: list[int] = field(default_factory=list)
+    waypoints: list[str] = field(default_factory=list)
     current_waypoint: int = 0
 
 
-def make_actor(actor_id: int, cell_index: int, speed_kmh: float) -> dict:
+def make_actor(actor_id: int, cell_index: str, speed_kmh: float) -> dict:
     """Create a new actor entry for the registry.
 
     Args:
